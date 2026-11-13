@@ -2,7 +2,7 @@
     /*---Headliner Text---*/
        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
     /*---Body Text---*/
-       @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 /*===COLOR VARIABLES===*/
     :root{
         --base-color: #ffffff;/*white*/
@@ -92,23 +92,36 @@
         .text-container p.hanging {
             padding-left: 2em;
             text-indent: -2em;
-        }
+            }
+        .text-container p a{
+            font-family: inherit;
+            letter-spacing: normal;
+            text-decoration: none;
+            color: var(--text-color);
+            }
+        .text-container p a:hover{
+            text-decoration: underline;
+            }
         .cropped-header{
             /*Header Variables*/
-            --def-pos: center 50%;/*Default*/
-            --tokyo-tower-pos: center 25%;/*Index Page*/
-            --japan-streetview-pos: center bottom; /*About Page*/
+            --one-quarter-pos: center 25%;/*Index Page*/
+            --center-pos: center 50%;/*Default,Earth's Processes*/
+            --three-quarter-pos: center 75%; /*Japan's Maps*/
+            --bottom-pos: center bottom; /*About Page*/
 
             display: block;/*treats the image as an object?*/
             width: min(1000px, 100%);
             height: 400px;
             overflow: hidden;
             object-fit: cover; /*Causes imaged to fill the box without stretch*/
-            object-position: var(--def-pos, var(--tokyo-tower-pos, --japan-streetview-pos)); /*Creates the focal point and moves the photo with percentages either before or after the image for x and y axis. (Other options: top, bottom, left, right)*/
+            object-position: var(--center-pos, var(--one-quarter-pos,--center-pos,--three-quarter-pos,--bottom-pos)); /*Creates the focal point and moves the photo with percentages either before or after the image for x and y axis. (Other options: top, bottom, left, right)*/
             }
     /*===SECTIONS===*/
         section{
             padding: 1em min(.5em, 15%);
+            }
+        .no-margin{
+                margin: 0em auto 0 auto;
             }
         h2 {
             font-size: 1.75rem;
@@ -122,7 +135,6 @@
             isplay: block;/*treats the image as an object?*/
             width: min(1000px, 100%);
             object-fit: cover; /*Causes imaged to fill the box without stretch*/
-            object-position: var(--def-pos, var(--tokyo-tower-pos, --japan-streetview-pos))
             }
         .dual-image-crop{
             display: block;
@@ -131,8 +143,7 @@
             align-items: center;
             width: min(1000px, 100%);
             object-fit: cover; /*Causes imaged to fill the box without stretch*/
-            object-position: var(--def-pos, var(--tokyo-tower-pos, --japan-streetview-pos)); /*Creates the focal point and moves the photo with percentages either before or after the image for x and y axis. (Other options: top, bottom, left, right)*/
-            }
+           }
 
 
     /*===GRID==*/
