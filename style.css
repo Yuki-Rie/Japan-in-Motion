@@ -89,9 +89,13 @@
             font-size: 1rem;
             line-height: 1.3em;
             }
+        .text-container p.hanging {
+            padding-left: 2em;
+            text-indent: -2em;
+        }
         .cropped-header{
             /*Header Variables*/
-            --def-pos: center %50;/*Default*/
+            --def-pos: center 50%;/*Default*/
             --tokyo-tower-pos: center 25%;/*Index Page*/
             --japan-streetview-pos: center bottom; /*About Page*/
 
@@ -109,13 +113,26 @@
         h2 {
             font-size: 1.75rem;
             }
-        /*section p {
-            margin-top: .5em;
-            font-size: 0.75rem;
-        }*/
-        /*---Sub Sections---*/
-        /*section#ClimateControlsBiomesandClimateChange{
-        }*/
+        .image-container{
+            display:flex;
+            gap: 2em;
+            width: 100%
+            }
+        .image-crop{
+            isplay: block;/*treats the image as an object?*/
+            width: min(1000px, 100%);
+            object-fit: cover; /*Causes imaged to fill the box without stretch*/
+            object-position: var(--def-pos, var(--tokyo-tower-pos, --japan-streetview-pos))
+            }
+        .dual-image-crop{
+            display: block;
+            height: 400px;
+            flex: 1;
+            align-items: center;
+            width: min(1000px, 100%);
+            object-fit: cover; /*Causes imaged to fill the box without stretch*/
+            object-position: var(--def-pos, var(--tokyo-tower-pos, --japan-streetview-pos)); /*Creates the focal point and moves the photo with percentages either before or after the image for x and y axis. (Other options: top, bottom, left, right)*/
+            }
 
 
     /*===GRID==*/
@@ -123,7 +140,7 @@
             margin-top: 3em;
             margin-bottom: 3em;
             display: grid;
-            width: 100%;
+            width: min(1000px, 100%);
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 1fr 1fr;
             /*grid-template-areas:
@@ -161,6 +178,9 @@
             header .text-container{
                 padding-top: 0;
                 }
+            .image-container{
+                flex-wrap: wrap;
+                }
             }
         @media(max-width: 640px){
             nav li{
@@ -172,10 +192,7 @@
             header{
                 margin-top: 0;
                 }
-            /*.text-container p{
-            font-size: .5rem;
-                }*/
-            /*h2{
-            font-size: 1rem;
-                }*/
+            .image-container{
+                height: auto;
+                }
             }
