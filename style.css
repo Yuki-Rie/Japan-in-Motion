@@ -136,7 +136,7 @@
             width: 100%
             }
         .image-crop{
-            isplay: block;/*treats the image as an object?*/
+            display: block;/*treats the image as an object?*/
             width: min(1000px, 100%);
             object-fit: cover; /*Causes imaged to fill the box without stretch*/
             }
@@ -145,7 +145,7 @@
             height: 400px;
             flex: 1;
             align-items: center;
-            width: min(1000px, 100%);
+            width: min(450px, 100%);
             object-fit: cover; /*Causes imaged to fill the box without stretch*/
            }
 
