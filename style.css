@@ -89,9 +89,13 @@
             font-size: 1rem;
             line-height: 1.3em;
             }
-        .text-container p.hanging {
+        .text-container p.hanging{
             padding-left: 2em;
             text-indent: -2em;
+            }
+        .text-container p.quoteblock{
+            padding: 1em 2em;
+            font-style: italic;
             }
         .text-container p a{
             font-family: inherit;
